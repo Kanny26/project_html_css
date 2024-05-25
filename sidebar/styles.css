@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system;
+}
+
+.main_box {
+    position: relative;
+    background: url('side3.jpg') right no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.main_box .sidebar_menu {
+    position: fixed;
+    height: 100vh;
+    width: 450px; /* Aumenta el ancho de la barra lateral */
+    left: -450px; /* Ajusta la posición inicial para coincidir con el nuevo ancho */
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: left 0.3s ease;
+}
+
+.sidebar_menu .logo {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .logo a {
+    color: #da8e8e;
+    font-size: 50px; /* Aumenta el tamaño del texto */
+    font-weight: 500;
+    position: absolute;
+    left: 50px;
+    line-height: 70px;
+    text-decoration: none;
+}
+
+.sidebar_menu .menu {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+}
+
+.sidebar_menu .menu li {
+    margin-top: 6px;
+    padding: 14px 20px;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu i {
+    color: #ba7777;
+    margin-top: 100px;
+    font-size: 30px; /* Aumenta el tamaño de los íconos */
+    padding-right: 15px; /* Ajusta el espacio a la derecha de los íconos */
+}
+
+.sidebar_menu .menu a {
+    color: #bc5f5f;
+    font-size: 40px; /* Aumenta el tamaño del texto */
+    text-decoration: none;
+}
+
+.sidebar_menu .menu li:hover {
+    border-left: 2px solid #fff; /* Ajusta el borde izquierdo al pasar el ratón */
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar_menu .social_media {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.social_media i {
+    padding: 0 10px; /* Ajusta el espacio entre los íconos */
+    color: #7c3939;
+    opacity: 0.6;
+    font-size: 35px; /* Aumenta el tamaño de los íconos sociales */
+    transition: all 0.2s linear;
+}
+
+.social_media i:hover {
+    opacity: 1;
+}
+
+#check {
+    display: none;
+}
+
+.main_box .btn_one i {
+    color: #fff;
+    font-size: 40px; /* Aumenta el tamaño del ícono del botón de apertura */
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .btn_two i {
+    font-size: 30px; /* Aumenta el tamaño del ícono del botón de cierre */
+    line-height: 60px;
+    position: absolute;
+    left: 310px; /* Ajusta la posición del ícono de cierre */
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.btn_one i:hover {
+    font-size: 34px;
+}
+
+#check:checked ~ .sidebar_menu {
+    left: 0px;
+}
+
+#check:checked ~ .btn_one i {
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i {
+    opacity: 1;
+}
